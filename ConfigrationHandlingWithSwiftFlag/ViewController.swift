@@ -13,6 +13,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        var baseURL = ""
+        
+        #if DEBUG
+            baseURL = "https://debug_url"
+        #elseif RELEASE
+            baseURL = "https://release_url"
+        #elseif TEST
+            baseURL = "https://test_url"
+        #endif
+        
+        print(baseURL)
+        
     }
 
 
